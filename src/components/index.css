@@ -97,4 +97,7 @@ hr{
         width: 45vh;
         margin: 10px 10px 10px 10px;
     }
+    .wind-humidity-cloudy{
+        width: 100%;
+    }
 }
