@@ -15,7 +15,7 @@
 .conatiner{
     background-color: #43bbff;
     color: #fff;
-    width: 60vh;
+    width: 50vh;
     border-radius: 20px;
     padding: 10px 10px 10px 10px;
 }
@@ -90,9 +90,4 @@ hr{
 }
 .wind-humidity-cloudy h2{
     text-align: center;
-}
-@media only screen and (max-width: 600px) {
-    .container{
-        width: 580px;
-    }
 }
