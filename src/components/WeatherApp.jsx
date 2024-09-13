@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
-import rain from '../assets/rain.png'
-import clouds from '../assets/clouds.png'
-import clear from '../assets/clear.png'
-import drizzle from '../assets/drizzle.png'
+import rainIMG from '../assets/rain.png'
+import cloudsIMG from '../assets/clouds.png'
+import clearIMG from '../assets/clear.png'
+import drizzleIMG from '../assets/drizzle.png'
 import humidity from '../assets/humidity.png'
 import mist from '../assets/mist.png'
 import search from '../assets/search.png'
@@ -18,7 +18,7 @@ const WeatherApp = () => {
     const[description,setDescription] = useState("");
     const[humidityp,setHumidityp] = useState("");
     const[cloudsp,setCloudsp] = useState("");
-
+    const[weatherIMG,setWeatherIMG] = useState(cloudsIMG);
 
         const apiKey = "566b9435ae38feb9d802908e2ab6257e";
         const api = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
@@ -40,12 +40,26 @@ const WeatherApp = () => {
                 setDescription(weather[0].description);
                 setCloudsp(clouds.all);
                 setCity("");
+
+                if(weather[0].main == "Clouds"){
+                    setWeatherIMG(cloudsIMG);
+                }
+                else if(weather[0].main == "Rain"){
+                    setWeatherIMG(rainIMG);
+                }
+                else if(weather[0].main == "Clear"){
+                    setWeatherIMG(clearIMG);
+                }
+                else if(weather[0].main == "Drizzle"){
+                    setWeatherIMG(drizzleIMG);
+                }
             } catch (error) {
                 console.log(error);
-                alert("insert data")
+                alert("insert correct data")
                 return 0;
                 
             }
+           
             
         }
   return (
@@ -61,7 +75,7 @@ const WeatherApp = () => {
                 </div>
                 <div className="info">
                     <div className="temp">
-                        <img src={rain} alt="" />
+                        <img src={weatherIMG} alt="" />
                         <h2>{temp}°c</h2>
                         <h3>{newCity}</h3>
                         <p>{description}</p>
@@ -78,7 +92,7 @@ const WeatherApp = () => {
                             <h2>{humidityp}%</h2>
                         </div>
                         <div className="cloudy">
-                            <img src={clouds} alt="" />
+                            <img src={cloudsIMG} alt="" />
                             <h2>{cloudsp}%</h2>
                         </div>
                         
