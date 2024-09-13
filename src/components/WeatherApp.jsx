@@ -34,7 +34,7 @@ const WeatherApp = () => {
                 console.log(weatherD);
 
                 setNewCity(weatherD.name);
-                setTemp(main.temp);
+                setTemp(Math.floor(main.temp));
                 setWindsp(wind.speed);
                 setHumidityp(main.humidity);
                 setDescription(weather[0].description);
