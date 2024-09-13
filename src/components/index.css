@@ -100,4 +100,7 @@ hr{
     .wind-humidity-cloudy{
         width: 100%;
     }
+    .wind-humidity-cloudy h2{
+        font-size: 15px;
+    }
 }
