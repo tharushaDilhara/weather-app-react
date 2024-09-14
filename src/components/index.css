@@ -102,6 +102,7 @@ hr{
     }
     .wind-humidity-cloudy img{
         margin-top: 10px;
+        gap: 40px;
     }
     .wind-humidity-cloudy h2{
         font-size: 15px;
